@@ -1,3 +1,8 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+def get_players():
+    player_1 = input("Player 1: Enter your name: ")
+    player_2 = input("Player 2: Enter your name: ")
+    return player_1, player_2
+
+get_players()
+
+
