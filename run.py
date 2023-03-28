@@ -39,7 +39,8 @@ def readInputO(board, playerO):
 
 def main():
     get_players()
-    viewBoard(board, boardMap)
-    readInputX(board, playerX)
-    readInputO(board, playerO)
+    while 1:
+        viewBoard(board, boardMap)
+        readInputX(board, playerX)
+        readInputO(board, playerO)
 main()
