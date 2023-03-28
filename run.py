@@ -1,3 +1,10 @@
+board = ["-", "-", "-",
+        "-", "-", "-",
+        "-", "-", "-"]
+
+
+
+
 def get_players():
     global playerX
     global playerO
