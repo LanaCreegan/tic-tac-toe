@@ -58,6 +58,28 @@ def checkRow(board, playerX, playerO):
         winner = True
     return winner           
     
+def checkColumn(board, playerX, playerO):
+    global winner
+    if board[0] == board[3] == board[6] != "-":
+        if board[0] == "x":
+            print(f"\nWinner is {playerX}")
+        elif board[0] == "o":
+            print(f"\nWinner is {playerO}")
+        winner = True
+    elif board[1] == board[4] == board[7] != "-":
+        if board[1] == "x":
+            print(f"\nWinner is {playerX}")
+        elif board[1] == "o":
+            print(f"\nWinner is {playerO}")
+        winner = True
+    elif board[2] == board[5] == board[8] != "-":
+        if board[2] == "x":
+            print(f"\nWinner is {playerX}")
+        elif board[2] == "o":
+            print(f"\nWinner is {playerO}")
+        winner = True
+    return winner
+
 def checkWin(board):
     if winner:
         viewBoard(board, boardMap)
@@ -73,5 +95,6 @@ def main():
         readInputX(board, playerX)
         readInputO(board, playerO)
         checkRow(board, playerX, playerO)
+        checkColumn(board, playerX, playerO)
         checkWin(board)
 main()
