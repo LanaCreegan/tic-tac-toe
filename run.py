@@ -1,3 +1,5 @@
+import sys
+
 board = ["-", "-", "-",
         "-", "-", "-",
         "-", "-", "-"]
@@ -7,6 +9,8 @@ boardMap = ["1", "2", "3",
             "7", "8", "9"]
 
 winner = None
+
+game = True
 
 # get player names
 def get_players():
@@ -97,16 +101,31 @@ def checkDiagonal(board,playerX,playerO):
     return winner
 
 def checkWin(board):
+    global game
     if winner:
         viewBoard(board, boardMap)
         print("\nGame Over")
-    else:
-        print("\nNo Winner")
+        game = False
+        playAgain = input("\nWould you like to play again? Y/N ").lower()
+        if playAgain == "y":
+            main()
+        elif playAgain == "n":
+            sys.exit()
+    elif "-" not in board:
+        print("\nDraw Game")
+        viewBoard(board, boardMap)
+        game = False
+        playAgain = input("\nWould you like to play again? Y/N ").lower()
+        if playAgain == "y":
+            main()
+        elif playAgain == "n":
+            sys.exit()
+    return game
 
 
 def main():
     get_players()
-    while 1:
+    while game:
         viewBoard(board, boardMap)
         readInputX(board, playerX)
         readInputO(board, playerO)
