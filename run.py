@@ -58,6 +58,12 @@ def checkRow(board, playerX, playerO):
         winner = True
     return winner           
     
+def checkWin(board):
+    if winner:
+        viewBoard(board, boardMap)
+        print("\nGame Over")
+    else:
+        print("\nNo Winner")
 
 
 def main():
@@ -67,4 +73,5 @@ def main():
         readInputX(board, playerX)
         readInputO(board, playerO)
         checkRow(board, playerX, playerO)
+        checkWin(board)
 main()
