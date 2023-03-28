@@ -26,7 +26,14 @@ def viewBoard(board, boardMap):
     {board[6]} | {board[7]} | {board[8]}        {boardMap[6]} | {boardMap[7]} | {boardMap[8]} """)
 
 
+def readInputX(board, playerX):
+    pos = int(input(f"\n{playerX} poistion: "))
+    board[pos-1] = "x"
+    viewBoard(board, boardMap)
+
+
 def main():
     get_players()
     viewBoard(board, boardMap)
+    readInputX(board, playerX)
 main()
