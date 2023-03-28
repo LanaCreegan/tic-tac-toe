@@ -31,9 +31,15 @@ def readInputX(board, playerX):
     board[pos-1] = "x"
     viewBoard(board, boardMap)
 
+def readInputO(board, playerO):
+    pos = int(input(f"\n{playerO} position: "))
+    board[pos-1] = "o"
+    viewBoard(board, boardMap)
+
 
 def main():
     get_players()
     viewBoard(board, boardMap)
     readInputX(board, playerX)
+    readInputO(board, playerO)
 main()
