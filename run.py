@@ -36,6 +36,15 @@ def readInputO(board, playerO):
     board[pos-1] = "o"
     viewBoard(board, boardMap)
 
+def checkRow(board, playerX, playerO):
+    if board[0] == board[1] == board[2] != "-":
+        if board[0] == "x":
+            print(f"\nWinner is {playerX}")
+        elif board[0] == "o":
+            print(f"\nWinner is {playerO}")
+            
+    
+
 
 def main():
     get_players()
@@ -43,4 +52,5 @@ def main():
         viewBoard(board, boardMap)
         readInputX(board, playerX)
         readInputO(board, playerO)
+        checkRow(board, playerX, playerO)
 main()
