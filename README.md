@@ -21,3 +21,6 @@ Once names have been entered for Player X and Player O the game begins. The game
 
 ### End Game
 When the game has finished a message saying would you like to play again will display. The user can enter 'y' which will restart the game or 'n' which will exit the game
+
+### Future Features
+- Give the option if the user wants to go first or second 
