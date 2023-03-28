@@ -8,7 +8,7 @@ boardmap = ["1", "2", "3",
 
 
 
-
+# get player names
 def get_players():
     global playerX
     global playerO
@@ -17,6 +17,7 @@ def get_players():
     return playerX, playerO
 
 
-get_players()
 
-
+def main():
+    get_players()
+main()
