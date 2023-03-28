@@ -1,7 +1,10 @@
 def get_players():
-    player_1 = input("Player 1: Enter your name: ")
-    player_2 = input("Player 2: Enter your name: ")
-    return player_1, player_2
+    global playerX
+    global playerO
+    playerX = input("Player X name: ")
+    playerO = input("PLayer O name: ")
+    return playerX, playerO
+
 
 get_players()
 
