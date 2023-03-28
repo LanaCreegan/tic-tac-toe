@@ -6,7 +6,7 @@ boardMap = ["1", "2", "3",
             "4", "5", "6",
             "7", "8", "9"]
 
-
+winner = None
 
 # get player names
 def get_players():
@@ -37,12 +37,26 @@ def readInputO(board, playerO):
     viewBoard(board, boardMap)
 
 def checkRow(board, playerX, playerO):
+    global winner
     if board[0] == board[1] == board[2] != "-":
         if board[0] == "x":
             print(f"\nWinner is {playerX}")
         elif board[0] == "o":
             print(f"\nWinner is {playerO}")
-            
+        winner = True
+    elif board[3] == board[4] == board[5] != "-":
+        if board[3] == "x":
+            print(f"\nWinner is {playerX}")
+        elif board[3] == "o":
+            print(f"\nWinner is {playerO}")
+        winner = True
+    elif board[6] == board[7] == board[8] != "-":
+        if board[6] == "x":
+            print(f"\nWinner is {playerX}")
+        elif board[6] == "o":
+            print(f"\nWinner is {playerO}")
+        winner = True
+    return winner           
     
 
 
