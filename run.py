@@ -128,6 +128,10 @@ def main():
     while game:
         viewBoard(board, boardMap)
         readInputX(board, playerX)
+        checkRow(board, playerX, playerO)
+        checkColumn(board, playerX, playerO)
+        checkDiagonal(board, playerX, playerO)
+        checkWin(board)
         readInputO(board, playerO)
         checkRow(board, playerX, playerO)
         checkColumn(board, playerX, playerO)
