@@ -81,14 +81,40 @@ def viewBoard(board, boardMap):
 
 
 def readInputX(board, playerX):
-    pos = int(input(f"\n{playerX} poistion: "))
-    board[pos-1] = "x"
-    viewBoard(board, boardMap)
+    validMove = None
+    while not validMove:
+        try:
+            pos = int(input(f"\n{playerX} position: "))
+            if pos > 9 or pos == "":
+                raise IndexError
+            elif board[pos-1] != "-":
+                raise ValueError
+            else:
+                board[pos-1] = "x"
+                validMove = True
+                break
+        except ValueError:
+            print("Invalid move, please choose a position on map")
+        except IndexError:
+            print("Invalid move, please pick a number between 1 - 9")
 
-def readInputO(board, playerO):
-    pos = int(input(f"\n{playerO} position: "))
-    board[pos-1] = "o"
-    viewBoard(board, boardMap)
+def readInputO(board,playerX):
+    validMove = None
+    while not validMove:
+        try:
+            pos = int(input(f"\n{playerX} position: "))
+            if pos > 9 or pos == "":
+                raise IndexError
+            elif board[pos-1] != "-":
+                raise ValueError
+            else:
+                board[pos-1] = "o"
+                validMove = True
+                break
+        except ValueError:
+            print("Invalid move, please choose a position on map")
+        except IndexError:
+            print("Invalid move, please pick a number between 1 - 9")
 
 def checkRow(board, playerX, playerO):
     global winner
@@ -176,16 +202,19 @@ def checkWin(board):
 def main():
     showRules()
     getPlayers()
+    viewBoard(board, boardMap)
     while game:
+        readInputX(board, playerX) 
         viewBoard(board, boardMap)
-        readInputX(board, playerX)
-        checkRow(board, playerX, playerO)
-        checkColumn(board, playerX, playerO)
-        checkDiagonal(board, playerX, playerO)
+        checkRow(board,playerX,playerO)
+        checkColumn(board,playerX,playerO)
+        checkDiagonal(board,playerX,playerO)
         checkWin(board)
-        readInputO(board, playerO)
-        checkRow(board, playerX, playerO)
-        checkColumn(board, playerX, playerO)
-        checkDiagonal(board, playerX, playerO)
+        readInputO(board,playerO)
+        viewBoard(board, boardMap)
+        checkRow(board,playerX,playerO)
+        checkColumn(board,playerX,playerO)
+        checkDiagonal(board,playerX,playerO)
         checkWin(board)
+
 main()
