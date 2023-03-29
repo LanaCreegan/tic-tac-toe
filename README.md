@@ -24,3 +24,18 @@ When the game has finished a message saying would you like to play again will di
 
 ### Future Features
 - Give the option if the user wants to go first or second 
+
+## Technologies Used
+
+
+
+## Testing 
+### User Stories
+As a user, I want to know where to put my symbol:
+- This can be done by viewing the map provided 
+
+As a user, I want to be able to see if a spot has already been taken:
+- If a spot has already been taken, the user will be shown a message saying that the spot has already been taken
+
+As a user, I want to be able to play the game again at the end of the game:
+- When the user reaches the end of the game they will be shown a message asking them if they want to play again, which the user can input 'y' to play again or 'n' to exit the game
