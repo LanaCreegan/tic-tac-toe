@@ -1,4 +1,6 @@
 import sys
+import time
+import os
 
 # Declare game variables
 board = []
@@ -21,8 +23,20 @@ def showRules():
     - Using numbers 1-9, put your symbol in an empty slot
     - When 3 spots have been filled horizontally, diagonally
       or vertically, that person wins
-    - If no one can fill three spots in a row the game is a draw
+    - If no one can fill three spots in a row the game is a draw \n
+    Do you understand the rules?
+
     """)
+    ack = input("Y/N: ").lower()
+    if ack == "y":
+        print("\nGreat the game will start in 3 seconds, get ready")
+        time.sleep(3)
+        os.system('clear')
+    elif ack == "n":
+        print("\nHere are the rules again")
+        time.sleep(1)
+        print("\n")
+        showRules()
 
 # get player names
 def get_players():
