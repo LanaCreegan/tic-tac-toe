@@ -116,46 +116,58 @@ def readInputO(board,playerX):
         except IndexError:
             print("Invalid move, please pick a number between 1 - 9")
 
-def checkRow(board, playerX, playerO):
+def checkRow(board,playerX,playerO):
     global winner
     if board[0] == board[1] == board[2] != "-":
         if board[0] == "x":
+            os.system('clear')
             print(f"\nWinner is {playerX}")
         elif board[0] == "o":
+            os.system('clear')
             print(f"\nWinner is {playerO}")
         winner = True
     elif board[3] == board[4] == board[5] != "-":
         if board[3] == "x":
+            os.system('clear')
             print(f"\nWinner is {playerX}")
         elif board[3] == "o":
+            os.system('clear')
             print(f"\nWinner is {playerO}")
         winner = True
     elif board[6] == board[7] == board[8] != "-":
         if board[6] == "x":
+            os.system('clear')
             print(f"\nWinner is {playerX}")
         elif board[6] == "o":
+            os.system('clear')
             print(f"\nWinner is {playerO}")
         winner = True
-    return winner           
+    return winner         
     
-def checkColumn(board, playerX, playerO):
+def checkColumn(board,playerX,playerO):
     global winner
     if board[0] == board[3] == board[6] != "-":
         if board[0] == "x":
+            os.system('clear')
             print(f"\nWinner is {playerX}")
         elif board[0] == "o":
+            os.system('clear')
             print(f"\nWinner is {playerO}")
         winner = True
     elif board[1] == board[4] == board[7] != "-":
         if board[1] == "x":
+            os.system('clear')
             print(f"\nWinner is {playerX}")
         elif board[1] == "o":
+            os.system('clear')
             print(f"\nWinner is {playerO}")
         winner = True
     elif board[2] == board[5] == board[8] != "-":
         if board[2] == "x":
+            os.system('clear')
             print(f"\nWinner is {playerX}")
         elif board[2] == "o":
+            os.system('clear')
             print(f"\nWinner is {playerO}")
         winner = True
     return winner
@@ -164,14 +176,18 @@ def checkDiagonal(board,playerX,playerO):
     global winner
     if board[0] == board[4] == board[8] != "-":
         if board[0] == "x":
+            os.system('clear')
             print(f"\nWinner is {playerX}")
         elif board[0] == "o":
+            os.system('clear')
             print(f"\nWinner is {playerO}")
         winner = True
     elif board[2] == board[4] == board[6] != "-":
         if board[2] == "x":
+            os.system('clear')
             print(f"\nWinner is {playerX}")
         elif board[2] == "o":
+            os.system('clear')
             print(f"\nWinner is {playerO}")
         winner = True
     return winner
