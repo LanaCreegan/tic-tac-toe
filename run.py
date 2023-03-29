@@ -98,7 +98,7 @@ def readInputX(board, playerX):
         except IndexError:
             print("Invalid move, please pick a number between 1 - 9")
 
-def readInputO(board,playerX):
+def readInputO(board, playerX):
     validMove = None
     while not validMove:
         try:
@@ -116,7 +116,7 @@ def readInputO(board,playerX):
         except IndexError:
             print("Invalid move, please pick a number between 1 - 9")
 
-def checkRow(board,playerX,playerO):
+def checkRow(board, playerX, playerO):
     global winner
     if board[0] == board[1] == board[2] != "-":
         if board[0] == "x":
@@ -144,7 +144,7 @@ def checkRow(board,playerX,playerO):
         winner = True
     return winner         
     
-def checkColumn(board,playerX,playerO):
+def checkColumn(board, playerX, playerO):
     global winner
     if board[0] == board[3] == board[6] != "-":
         if board[0] == "x":
@@ -172,7 +172,7 @@ def checkColumn(board,playerX,playerO):
         winner = True
     return winner
 
-def checkDiagonal(board,playerX,playerO):
+def checkDiagonal(board, playerX, playerO):
     global winner
     if board[0] == board[4] == board[8] != "-":
         if board[0] == "x":
@@ -194,25 +194,34 @@ def checkDiagonal(board,playerX,playerO):
 
 def checkWin(board):
     global game
+    global winner
     if winner:
+        print("\nGAME OVER!!! See result below")
+        time.sleep(0.5)
         viewBoard(board, boardMap)
-        print("\nGame Over")
-        game = False
-        playAgain = input("\nWould you like to play again? Y/N ").lower()
-        if playAgain == "y":
-            main()
-        elif playAgain == "n":
+        checkWin = input("\nWould you like to play again? Y/N ").lower()
+        if checkWin =="y":
+            game = True
+            winner = False
+            os.system('clear')
+            for i in range(len(board)):
+                board[i] = "-"
+        elif checkWin =="n":
             sys.exit()
     elif "-" not in board:
-        print("\nDraw Game")
+        print("\nDRAW GAME See result below")
+        time.sleep(0.5)
         viewBoard(board, boardMap)
-        game = False
-        playAgain = input("\nWould you like to play again? Y/N ").lower()
-        if playAgain == "y":
-            main()
-        elif playAgain == "n":
+        checkWin = input("\nWould you like to play again? Y/N ").lower()
+        if checkWin =="y":
+            game = True
+            winner = False
+            os.system('clear')
+            for i in range(len(board)):
+                board[i] = "-"
+        elif checkWin =="n":
             sys.exit()
-    return game
+    return game, winner
 
 
 def main():
