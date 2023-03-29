@@ -10,8 +10,19 @@ for i in range(9):
     boardMap.append(i+1)
 
 winner = None
-
 game = True
+
+def showRules():
+    print("""
+    Welcome to Tic Tac Toe. The rules are simple: \n
+    - User one will be asked to enter their name to use 'X'
+    - User two will be asked to enter their name to use 'O'
+    - The game displays on a 3 x 3 grid, along with a map
+    - Using numbers 1-9, put your symbol in an empty slot
+    - When 3 spots have been filled horizontally, diagonally
+      or vertically, that person wins
+    - If no one can fill three spots in a row the game is a draw
+    """)
 
 # get player names
 def get_players():
@@ -125,6 +136,7 @@ def checkWin(board):
 
 
 def main():
+    showRules()
     get_players()
     while game:
         viewBoard(board, boardMap)
