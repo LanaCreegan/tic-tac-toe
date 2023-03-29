@@ -39,11 +39,35 @@ def showRules():
         showRules()
 
 # get player names
-def get_players():
+def getPlayers():
     global playerX
     global playerO
-    playerX = input("Player X name: ")
-    playerO = input("PLayer O name: ")
+    validNameX = None
+    validNameO = None
+    while not validNameX:
+        time.sleep(0.2)
+        playerX = input("Player x name: ").capitalize()
+        try:
+            if not playerX.isalnum():
+                raise ValueError
+            else:
+                validNameX = True
+                break
+        except ValueError:
+            print("Not X Valid name")
+        print(playerX)
+    while not validNameO:
+        time.sleep(0.2)
+        playerO = input("Player o name: ").capitalize()
+        try:
+            if not playerO.isalnum():
+                raise ValueError
+            else:
+                validNameX = True
+                break
+        except ValueError:
+            print("Not O Valid name")
+        print(playerO)
     return playerX, playerO
 
 def viewBoard(board, boardMap):
@@ -151,7 +175,7 @@ def checkWin(board):
 
 def main():
     showRules()
-    get_players()
+    getPlayers()
     while game:
         viewBoard(board, boardMap)
         readInputX(board, playerX)
