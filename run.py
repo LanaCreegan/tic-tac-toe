@@ -1,12 +1,13 @@
 import sys
 
-board = ["-", "-", "-",
-        "-", "-", "-",
-        "-", "-", "-"]
+# Declare game variables
+board = []
 
-boardMap = ["1", "2", "3", 
-            "4", "5", "6",
-            "7", "8", "9"]
+boardMap = []
+
+for i in range(9):
+    board.append("-")
+    boardMap.append(i+1)
 
 winner = None
 
