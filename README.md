@@ -39,3 +39,21 @@ As a user, I want to be able to see if a spot has already been taken:
 
 As a user, I want to be able to play the game again at the end of the game:
 - When the user reaches the end of the game they will be shown a message asking them if they want to play again, which the user can input 'y' to play again or 'n' to exit the game
+
+## Fixed Bugs
+
+
+## Deployment 
+To deploy on Heroku:
+- Navigate to the Heroku dashboard, select 'New' and then click on 'Create new app'
+- Write a name for your app and then select your region
+- Then click 'Create app'
+- Navigate to the settings tab
+- Go down to the config vars section and select 'Reveal Config Vars'
+- Add in any relevant config vars, in this case 'PORT' was entered in the key field and '8000' in the value field
+- Then go to buildpacks and add Python and click save changes
+- Then select node.js and click save changes
+- Navigate to the deploy tab
+- Underneath the deployment method section select GitHub
+- Click on 'Connect to GitHub'
+- Search for the repository 
