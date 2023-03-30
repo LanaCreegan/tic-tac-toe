@@ -308,7 +308,6 @@ def check_win(board):
             print("Please enter 'Y' for yes and 'N' for no")
             
 
-
 def main():
     """ Main function to play game """
     show_rules()
