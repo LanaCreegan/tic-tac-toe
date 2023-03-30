@@ -14,6 +14,8 @@ for i in range(9):
 winner = None
 game = True
 
+# Welcome message with rules explained
+
 def showRules():
     print("""
     Welcome to Tic Tac Toe. The rules are simple: \n
@@ -38,7 +40,12 @@ def showRules():
         print("\n")
         showRules()
 
-# get player names
+""" 
+Get player names and add 2 sec timer between 
+name inputs
+Player names get capitalised and must be letters
+"""
+
 def getPlayers():
     global playerX
     global playerO
@@ -48,7 +55,7 @@ def getPlayers():
         time.sleep(0.2)
         playerX = input("Player x name: ").capitalize()
         try:
-            if not playerX.isalnum():
+            if not playerX.isalpha():
                 raise ValueError
             else:
                 validNameX = True
@@ -60,7 +67,7 @@ def getPlayers():
         time.sleep(0.2)
         playerO = input("Player o name: ").capitalize()
         try:
-            if not playerO.isalnum():
+            if not playerO.isalpha():
                 raise ValueError
             else:
                 validNameX = True
@@ -69,6 +76,8 @@ def getPlayers():
             print("Not O Valid name")
         print(playerO)
     return playerX, playerO
+
+# Playing board and map of the board
 
 def viewBoard(board, boardMap):
     print("\n===========================================")
@@ -79,12 +88,16 @@ def viewBoard(board, boardMap):
     __________        __________
     {board[6]} | {board[7]} | {board[8]}        {boardMap[6]} | {boardMap[7]} | {boardMap[8]} """)
 
+"""
+Reads player X's input
+Must be a number and must be between 1-9
+"""
 
 def readInputX(board, playerX):
     validMove = None
     while not validMove:
         try:
-            pos = int(input(f"\n{playerX} position: "))
+            pos = int(input(f"\n{playerX} go, please choose a position: "))
             if pos > 9 or pos == "":
                 raise IndexError
             elif board[pos-1] != "-":
@@ -98,11 +111,16 @@ def readInputX(board, playerX):
         except IndexError:
             print("Invalid move, please pick a number between 1 - 9")
 
+"""
+Reads player O's input
+Must be a number and must be between 1-9
+"""
+
 def readInputO(board, playerX):
     validMove = None
     while not validMove:
         try:
-            pos = int(input(f"\n{playerX} position: "))
+            pos = int(input(f"\n{playerX} go, please choose a position: "))
             if pos > 9 or pos == "":
                 raise IndexError
             elif board[pos-1] != "-":
@@ -115,6 +133,11 @@ def readInputO(board, playerX):
             print("Invalid move, please choose a position on map")
         except IndexError:
             print("Invalid move, please pick a number between 1 - 9")
+
+"""
+Checks row for winner or draw
+terminal is cleared of previous boards 
+"""
 
 def checkRow(board, playerX, playerO):
     global winner
@@ -144,6 +167,11 @@ def checkRow(board, playerX, playerO):
         winner = True
     return winner         
     
+"""
+Checks column for winner or draw
+terminal is cleared of previous boards 
+"""
+
 def checkColumn(board, playerX, playerO):
     global winner
     if board[0] == board[3] == board[6] != "-":
@@ -172,6 +200,10 @@ def checkColumn(board, playerX, playerO):
         winner = True
     return winner
 
+"""
+Checks diagonal for winner or draw
+terminal is cleared of previous boards 
+"""
 def checkDiagonal(board, playerX, playerO):
     global winner
     if board[0] == board[4] == board[8] != "-":
@@ -191,6 +223,12 @@ def checkDiagonal(board, playerX, playerO):
             print(f"\nWinner is {playerO}")
         winner = True
     return winner
+
+"""
+Checks for a winner or a draw
+Asks user if they want to play again
+Clears terminal if yes, exits if no
+"""
 
 def checkWin(board):
     global game
@@ -223,6 +261,7 @@ def checkWin(board):
             sys.exit()
     return game, winner
 
+# Main function to play game 
 
 def main():
     showRules()
