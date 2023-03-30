@@ -27,8 +27,9 @@ When the game has finished a message saying would you like to play again will di
 - Scoreboard 
 
 ## Technologies Used
-- Python
-
+- Python: Programming language
+- Github: Version control
+- Gitpod: IDE used
 
 ## Testing 
 ### User Stories
@@ -40,6 +41,11 @@ As a user, I want to be able to see if a spot has already been taken:
 
 As a user, I want to be able to play the game again at the end of the game:
 - When the user reaches the end of the game they will be shown a message asking them if they want to play again, which the user can input 'y' to play again or 'n' to exit the game
+
+### Python pylint
+Currently python pylint is reporting 3 warnings:
+- Global variable undefined at the module level: Global statements were used in the game to access global variables. It is not recommened to use global as it can cause issues and the potential for bugs in big programs. For the purpose of a beginner project I found it useful to use them 
+- Redefining name from outer scope: 
 
 ## Fixed Bugs
 
@@ -57,7 +63,11 @@ To deploy on Heroku:
 - Navigate to the deploy tab
 - Underneath the deployment method section select GitHub
 - Click on 'Connect to GitHub'
-- Search for the repository 
+- Search for the repository and click connect
+- Then go down to the deploy options
+- If you want automatic deployment with every new push to the Github repository select automatic deploys
+- In manual deploy select what branch to deploy and click 'Deploy Branch'
+- Then click on view to see the deployed app
 
 ## Clone
 The repository can be cloned by following these steps:
