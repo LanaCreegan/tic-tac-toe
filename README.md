@@ -12,6 +12,10 @@ As a user, I want to:
 - Have a clear idea of where to put an X or an O
 - Be able to play the game again or quit
 
+## Flowchart
+The structure of the game was used using [Lucidchart](https://www.lucidchart.com/pages/landing?utm_source=google&utm_medium=cpc&utm_campaign=_chart_en_tier1_mixed_search_brand_exact_&km_CPC_CampaignId=1490375427&km_CPC_AdGroupID=137673543827&km_CPC_Keyword=lucid%20chart%20software&km_CPC_MatchType=e&km_CPC_ExtensionID=&km_CPC_Network=g&km_CPC_AdPosition=&km_CPC_Creative=588639287401&km_CPC_TargetID=aud-1660700197372:kwd-1007832806586&km_CPC_Country=1007903&km_CPC_Device=c&km_CPC_placement=&km_CPC_target=&gclid=CjwKCAjw5pShBhB_EiwAvmnNV24rtGB8vhbzTPT94X_52pvvg-Elz8nIPeGoIiOpQgX2s64WTkQEyRoCjuQQAvD_BwE)
+
+![Flow Chart](assets/flow_chart.png)
 ## Features
 ### Welcome message
 ![Welcome message](assets/welcome_message.png)
