@@ -24,9 +24,10 @@ When the game has finished a message saying would you like to play again will di
 
 ### Future Features
 - Give the option if the user wants to go first or second 
+- Scoreboard 
 
 ## Technologies Used
-
+- Python
 
 
 ## Testing 

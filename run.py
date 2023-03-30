@@ -80,17 +80,31 @@ def get_players():
         print(player_o)
     return player_x, player_o
 
+
 # Playing board and map of the board
 
 
 def view_board(board, board_map):
-    print("\n===========================================")
-    print(f"""\nGame:            Map:
-    {board[0]} | {board[1]} | {board[2]}        {board_map[0]} | {board_map[1]} | {board_map[2]}
-    __________        __________
-    {board[3]} | {board[4]} | {board[5]}        {board_map[3]} | {board_map[4]} | {board_map[5]}
-    __________        __________
-    {board[6]} | {board[7]} | {board[8]}        {board_map[6]} | {board_map[7]} | {board_map[8]} """)
+   
+    print(f"""\nMap:            
+
+    {board_map[0]} | {board_map[1]} | {board_map[2]}
+    __________
+
+    {board_map[3]} | {board_map[4]} | {board_map[5]}
+    __________
+
+    {board_map[6]} | {board_map[7]} | {board_map[8]}""")
+
+    print(f"""\nGame:            
+
+    {board[0]} | {board[1]} | {board[2]}
+    __________
+
+    {board[3]} | {board[4]} | {board[5]}
+    __________
+
+    {board[6]} | {board[7]} | {board[8]}""")
 
 
 """
