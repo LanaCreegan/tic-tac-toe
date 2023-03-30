@@ -11,7 +11,7 @@ As a user, I want to:
 
 ## Features
 ### Welcome message
-
+A welcome message is displayed, welcoming the user to the game along with a brief explaination of the rules. The user will then be asked if the understand the rules
 
 ### Player Names
 After the welcome message the user will be asked to enter a name to play with 'X' and again with 'O'
@@ -35,7 +35,7 @@ As a user, I want to know where to put my symbol:
 - This can be done by viewing the map provided 
 
 As a user, I want to be able to see if a spot has already been taken:
-- If a spot has already been taken, the user will be shown a message saying that the spot has already been taken
+- If a spot has already been taken, the user will be shown a message saying that the move is invalid. This will also be displayed if the user enters anyhting other than a number
 
 As a user, I want to be able to play the game again at the end of the game:
 - When the user reaches the end of the game they will be shown a message asking them if they want to play again, which the user can input 'y' to play again or 'n' to exit the game
