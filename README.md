@@ -48,7 +48,9 @@ Currently python pylint is reporting 3 warnings:
 - Redefining name from outer scope: 
 
 ## Fixed Bugs
-
+- Error handling that was stuck in infinite loop. This was fixed by adding booleans and breaks to exit infinite loop
+- Trying to stop game when there was a winner. This was fixed by seperating the read input into two different functions
+- Reading valid inputs for the game. This was fixed by adding if/else statements that covered every input that wasn't valid
 
 ## Deployment 
 To deploy on Heroku:

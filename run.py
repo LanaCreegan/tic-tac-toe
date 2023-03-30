@@ -306,6 +306,7 @@ def check_win(board):
             return GAME, WINNER
         except ValueError:
             print("Please enter 'Y' for yes and 'N' for no")
+            time.sleep(0.5)
 
 
 def main():
