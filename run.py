@@ -288,7 +288,7 @@ def check_win(board):
                     raise ValueError
             elif "-" not in board:
                 print("\nDRAW GAME!!! See result below: ")
-                time.sleep(0.5)
+                time.sleep(5)
                 view_board(board, map)
                 check_win = input("\nPlay again? Y/N: ").lower()
                 if check_win == "y":
@@ -306,7 +306,7 @@ def check_win(board):
             return GAME, WINNER
         except ValueError:
             print("Please enter 'Y' for yes and 'N' for no")
-            time.sleep(0.5)
+            
 
 
 def main():
